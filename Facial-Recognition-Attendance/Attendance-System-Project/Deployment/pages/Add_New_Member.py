@@ -27,7 +27,7 @@ with st.container():
             cv2_img = cv2.imdecode(np.frombuffer(
                 bytes_data, np.uint8), cv2.IMREAD_COLOR)
             gray = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2GRAY)
-            face_cascade = cv2.CascadeClassifier("Attendance-System-Project/haarcascade_frontalface_default.xml")
+            face_cascade = cv2.CascadeClassifier("Facial-Recognition-Attendance/Attendance-System-Project/haarcascade_frontalface_default.xml")
             #faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5) 
             faces = face_cascade.detectMultiScale(gray, 1.3, 5)
             for (x, y, w, h) in faces:
@@ -52,13 +52,13 @@ with st.container():
                 cv2.imwrite(path, cv2_resized_img)
                 img = face_recognition.load_image_file(path)
                 img_encoding = face_recognition.face_encodings(img)[0]
-                df = pd.read_csv("Attendance-System-Project/Encodings/encodings.csv")
+                df = pd.read_csv("Facial-Recognition-Attendance/Attendance-System-Project/Encodings/encodings.csv")
                 en = df["Encodings"].tolist()
                 n = df["Persons"].tolist()
                 en.append(img_encoding)
                 n.append(name)
                 df = pd.DataFrame({"Persons": n, "Encodings": en})
-                df.to_csv("Attendance-System-Project/Encodings/encodings.csv", index=False)
+                df.to_csv("Facial-Recognition-Attendance/Attendance-System-Project/Encodings/encodings.csv", index=False)
                 st.write("Member Added")
             else:
                 st.warning("Please Enter Member Name")
