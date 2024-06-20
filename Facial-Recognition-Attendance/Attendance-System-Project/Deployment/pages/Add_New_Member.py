@@ -44,7 +44,7 @@ with st.container():
     with c1:
         if st.button("Save Member"):
             if filled:
-                path = "Attendance-System-Project/Dataset/"+name+".jpg"
+                path = "Facial-Recognition-Attendance/Attendance-System-Project/Dataset/"+name+".jpg"
                 height, width = cv2_img.shape[:2]
                 cv2_resized_img = cv2.resize(
                     cv2_img, (int(width/2), int(height/2)))
