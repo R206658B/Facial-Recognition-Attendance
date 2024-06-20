@@ -1,8 +1,8 @@
-#import streamlit as st
-#import cv2
-#import numpy as np
-#import face_recognition
-#import pandas as pd
+import streamlit as st
+import cv2
+import numpy as np
+import face_recognition
+import pandas as pd
 
 st.set_page_config(
     page_title="Attendance System", page_icon="📊", layout="wide"
