@@ -1,0 +1,8 @@
+streamlit
+streamlit_option_menu
+firebase_admin
+uvicorn
+numpy
+scikit-learn
+fastapi
+opencv-python
