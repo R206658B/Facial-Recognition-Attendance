@@ -6,3 +6,4 @@ numpy
 scikit-learn
 fastapi
 opencv-python
+cv2
